@@ -42,7 +42,7 @@ $pdv = izracunajPDV(333);
 </head>
 <body>
 <h1><?= $name ?></h1>
-<h1><?= $calculated ?></h1>
+<h1><?= $result ?></h1>
 <h1><?= $number ?></h1>
 <h1><?= $pdv ?></h1>
 </body>
