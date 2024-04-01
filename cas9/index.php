@@ -30,20 +30,20 @@ function izracunajPDV(int $price)
 $pdv = izracunajPDV(333);
 
 
-function izdracunajDostavu($city)
-{
-    $dostava = [
-        "Subotica" => 220,
-        "Pancevo" => 10,
-        "Sarajevo" => 292,
-        "Split" => 799
-    ];
-
-    $cenaDostave = [
-        "1" => 200,
-        "2" => 350,
-        "3" => 500,
-    ];
+//function izdracunajDostavu($city)
+//{
+//    $dostava = [
+//        "Subotica" => 220,
+//        "Pancevo" => 10,
+//        "Sarajevo" => 292,
+//        "Split" => 799
+//    ];
+//
+//    $cenaDostave = [
+//        "1" => 200,
+//        "2" => 350,
+//        "3" => 500,
+//    ];
 
 //    foreach ($dostava as $grad => $razdaljina){
 //        if ($razdaljina<=100) return $cenaDostave['1']=200;
