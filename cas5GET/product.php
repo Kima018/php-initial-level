@@ -1,5 +1,9 @@
 <?php
-ini_set('intl.default_locale', 'en_US');
+if (!isset($_GET['price'],$_GET['price'])){
+    header("index.php?=nije-prosledjen-parametar");
+    exit();
+}
+
 $final_price = 0;
 $entry_price =intval($_GET['price']);
 $type_of_product=$_GET['type'];
@@ -11,9 +15,7 @@ if ($type_of_product==="food"){
 if (isset($_GET['add_pdv'])){
     $final_price+=$final_price*0.2;
 }
-//$locale = 'en_US';
-//$fmt = new NumberFormatter($locale, NumberFormatter::CURRENCY);
-//$formatted_price = $fmt->formatCurrency($final_price, 'USD');
+
 
 ?>
 <!doctype html>

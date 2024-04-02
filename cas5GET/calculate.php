@@ -1,7 +1,12 @@
 <?php
+if (!isset($_GET['operation'])) {
+    header("index.php?=nije-prosledjen-parametar");
+    exit();
+}
+
 if ($_GET['operation'] === "addition") {
     $result = intval($_GET['num_1']) + intval($_GET['num_2']);
-}elseif ($_GET['operation'] === "subtraction"){
+} elseif ($_GET['operation'] === "subtraction") {
     $result = intval($_GET['num_1']) - intval($_GET['num_2']);
 }
 ?>
@@ -15,6 +20,6 @@ if ($_GET['operation'] === "addition") {
     <title>Document</title>
 </head>
 <body>
-<h2> Rezultat je <?=$result?></h2>
+<h2> Rezultat je <?= $result ?></h2>
 </body>
 </html>
