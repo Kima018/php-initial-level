@@ -3,7 +3,7 @@
 $name = "Marijan";
 $name = str_replace("a", "$", $name);
 
-function saberi($num1, $num2)
+function saberi(int $num1, int $num2)
 {
     if (($num1 || $num2) <= 0) die("Brojevi moraju biti veci od 0");
     return "rezultat je: " . $num1 + $num2;
@@ -11,15 +11,14 @@ function saberi($num1, $num2)
 
 $result = saberi(44, 55);
 
-function isEven($number)
+function isEven($number):bool
 {
-    if ($number % 2 == 0) return "Broj je paran";
-    return "Broj nije paran";
+    return $number % 2 == 0;
 }
 
-$number = isEven(22);
+$number = isEven(22) ? "Broj je paran" : "Broj nije paran";
 
-function izracunajPDV(int $price)
+function calculateVAT(int $price)
 {
     $pdv = 0.22;
     if (!is_numeric($price)) die ("Verdnost mora biti broj, ne string");
@@ -27,10 +26,7 @@ function izracunajPDV(int $price)
     return "PDV iznosi " . $price * $pdv . "$";
 }
 
-$pdv = izracunajPDV(333);
-
-
-
+$pdv = calculateVAT(333);
 ?>
 
 

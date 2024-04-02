@@ -1,5 +1,4 @@
 <?php
-
 function calculateDelivery(int $price, string $city)
 {
     $delivery = [
@@ -14,7 +13,7 @@ function calculateDelivery(int $price, string $city)
         "2" => 350,
         "3" => 500,
     ];
-    
+
     if (!array_key_exists($city, $delivery)) die("Grad ne postoji");
     $deliveryPrice = $priceList['1'];
     if ($delivery[$city] <= 200 && $delivery[$city] > 100) $deliveryPrice = $priceList['2'];
