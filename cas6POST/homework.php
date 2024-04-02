@@ -2,21 +2,26 @@
 
 if ($_SERVER['REQUEST_METHOD'] !== "POST") {
     header("Location:index.php?form-is-not-method-post");
+    exit();
 }
 
 if (!isset($_POST['name'])) {
     header("Location:index.php?wrong-input-type");
+    exit();
 }
 
-if ($_POST['name'] === "") header("Location:index.php?wrong-input-type");
+if ($_POST['name'] === "") {
+    header("Location:index.php?wrong-input-type");
+    exit();
+}
 
-$peoples = ["Maki","Toma","Pera","Laza"];
+$peoples = ["Maki", "Toma", "Pera", "Laza"];
 
-if (!in_array(strtolower($_POST['name']),array_map('strtolower',$peoples))){
+if (!in_array(strtolower($_POST['name']), array_map('strtolower', $peoples))) {
     $message = "Nema korisnika u listi";
-} else{
+} else {
 //    mozda array_search da ga izvucemo iz liste umesto iz $_POST[]
-    $message = "Uspesno smo pornasli korisnija ".$_POST['name'];
+    $message = "Uspesno smo pornasli korisnija " . $_POST['name'];
 }
 
 ?>
@@ -30,7 +35,7 @@ if (!in_array(strtolower($_POST['name']),array_map('strtolower',$peoples))){
     <title>Document</title>
 </head>
 <body>
-<h1><?=$message?></h1>
+<h1><?= $message ?></h1>
 </body>
 </html>
 
