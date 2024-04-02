@@ -1,8 +1,9 @@
 <?php
+if (!$_SERVER["REQUEST_METHOD"] == "POST") die("Pogresna metoda u formi");
+if (!isset($_POST['name'], $_POST['password'])) die("Polja ne postoje");
+
 $output = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $output = checkUser(strtolower($_POST['name']), $_POST['password']);
-}
+$output = checkUser(strtolower($_POST['name']), $_POST['password']);
 function checkUser(string $name, string $password): string
 {
     if ($name === "administrator" && $password === 'mojaSifraJeSigurna') {
