@@ -13,12 +13,14 @@ function checkUser(string $name, string $password): string
     }
 }
 
+
 $current_time = date("H");
 $part_of_the_day = match (true) {
     $current_time >= 5 && $current_time < 12 => "jutro",
     $current_time >= 12 && $current_time < 20 => "popodne",
     default => "noc",
 }; ?>
+
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
