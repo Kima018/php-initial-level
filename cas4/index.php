@@ -13,6 +13,8 @@ function checkUser(string $name, string $password): string
     }
 }
 
+
+
 $current_time = date("H");
 $part_of_the_day = match (true) {
     $current_time >= 5 && $current_time < 12 => "jutro",
